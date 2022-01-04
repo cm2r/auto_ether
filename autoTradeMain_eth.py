@@ -63,7 +63,7 @@ def StartAutoTrade(coin):
         message.send_message("비트코인 자동매매 시작합니다.")
 
         minimumTradePrice=GetMinimumPrice(upbit,coin)
-        print(minimumTradePrice)
+        print('minimumTradePrice',minimumTradePrice)
     except Exception as e:
         print(e)
        
