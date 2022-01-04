@@ -25,8 +25,8 @@ class message:
                 self.token = lines[0].strip()
                 self.my_chat_id=lines[1].strip()
                 
-                print("token ",token)
-                print("my_chat_id ",my_chat_id)
+                print("token ",self.token)
+                print("my_chat_id ",self.my_chat_id)
 
         self.URL="https://api.telegram.org/bot{}/".format(self.token)
 
