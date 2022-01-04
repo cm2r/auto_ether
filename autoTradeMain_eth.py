@@ -89,13 +89,15 @@ def StartAutoTrade(coin):
                 ma15 = get_ma15(coin)
                 current_price = get_current_price(coin)
                 if target_price < current_price and ma15 < current_price:
+                    
+                    print("trade chk 02")
+                
                     krw = float(upbit.get_balance('KRW'))
                     if krw > minimumTradePrice:
                         buy_result = upbit.buy_market_order(coin, krw*0.9995)
                         message.send_message("{} 매수 : {}".format(coin,str(buy_result)))
             else:
                 
-                print("trade chk 02")
                 
                 btc = float(upbit.get_balance(coin))
                 if btc > 0:
