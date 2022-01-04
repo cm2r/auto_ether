@@ -58,6 +58,8 @@ def StartAutoTrade(coin):
             secretKey = lines[1].strip()
         
         upbit = pyupbit.Upbit(accessKey, secretKey)
+        print("accessKey ",accessKey)
+        print("secretKey ",secretKey)
         print("autotrader start")
 
         # 시작시 텔레그램에 시작메세지 전송
