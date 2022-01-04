@@ -91,12 +91,9 @@ def StartAutoTrade(coin):
                 
                 ma15 = get_ma15(coin)
                     
-                print("trade chk 03")
+                print("trade chk 03 ",coin)
                 
                 current_price = get_current_price(coin)
-                    
-                print("trade current_price ",current_price)
-                
                 if target_price < current_price and ma15 < current_price:
                     krw = float(upbit.get_balance('KRW'))
                     if krw > minimumTradePrice:
