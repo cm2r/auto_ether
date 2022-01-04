@@ -80,9 +80,11 @@ def StartAutoTrade(coin):
             start_time = get_start_time(coin)
             end_time = start_time + datetime.timedelta(days=1)
             
-            print("trade chk 01")
 
             if start_time < now < end_time - datetime.timedelta(seconds=10):
+                
+                print("trade chk 01")
+                
                 target_price = get_target_price(coin, targetK)
                 ma15 = get_ma15(coin)
                 current_price = get_current_price(coin)
@@ -92,6 +94,9 @@ def StartAutoTrade(coin):
                         buy_result = upbit.buy_market_order(coin, krw*0.9995)
                         message.send_message("{} 매수 : {}".format(coin,str(buy_result)))
             else:
+                
+                print("trade chk 02")
+                
                 btc = float(upbit.get_balance(coin))
                 if btc > 0:
                     #전부매도
@@ -100,12 +105,9 @@ def StartAutoTrade(coin):
                 targetK,kResult= bestK.get_bestK()
                 message.send_message("<<Best K Result>> :: \n{}".format(kResult))
                 
-            print("trade chk 02")
 
             #Telegram Bot(Response Message)
             messageId=message.CheckMessageInLoop()
-            
-            print("trade chk 03")
 
             if messageId==message.currentState:
                 CheckCurrentCondition(coin,message,targetK)
@@ -117,9 +119,6 @@ def StartAutoTrade(coin):
             elif messageId==message.exitYes:
                 message.send_message("자동매매봇이 종료되었습니다")
                 sys.exit()
-                
-                
-            print("trade chk 04")
 
 
             time.sleep(1)
