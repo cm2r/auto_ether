@@ -112,7 +112,7 @@ def StartAutoTrade(coin):
 
             time.sleep(1)
         except Exception as e:
-            print(e)
+            print("trade ",e)
             message.send_message("Exception:: {}".format(e))
             time.sleep(1)
 
