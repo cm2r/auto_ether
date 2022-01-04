@@ -86,12 +86,18 @@ def StartAutoTrade(coin):
                 print("trade chk 01")
                 
                 target_price = get_target_price(coin, targetK)
-                ma15 = get_ma15(coin)
-                current_price = get_current_price(coin)
-                if target_price < current_price and ma15 < current_price:
                     
-                    print("trade chk 02")
+                print("trade chk 02")
                 
+                ma15 = get_ma15(coin)
+                    
+                print("trade chk 03")
+                
+                current_price = get_current_price(coin)
+                    
+                print("trade chk 04")
+                
+                if target_price < current_price and ma15 < current_price:
                     krw = float(upbit.get_balance('KRW'))
                     if krw > minimumTradePrice:
                         buy_result = upbit.buy_market_order(coin, krw*0.9995)
