@@ -70,7 +70,7 @@ def StartAutoTrade(coin):
     except Exception as e:
         print("login Exception ",e)
        
-        message.send_message("Exception:: {}".format(e))
+        message.send_message("Exception login:: {}".format(e))
         
 
 
@@ -116,7 +116,7 @@ def StartAutoTrade(coin):
             time.sleep(1)
         except Exception as e:
             print("trade ",e)
-            message.send_message("Exception:: {}".format(e))
+            message.send_message("Exception trade:: {}".format(e))
             time.sleep(1)
 
 
