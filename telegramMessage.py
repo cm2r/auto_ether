@@ -16,6 +16,7 @@ class message:
         self.exitYes=3
         self.bestKUpdate=4
         
+        
 
     def SetInfo(self):
         if self.token=="==Telegram Bot Token==" or self.my_chat_id=="==Telegram Bot ChatID==":
@@ -23,6 +24,9 @@ class message:
                 lines = f.readlines()
                 self.token = lines[0].strip()
                 self.my_chat_id=lines[1].strip()
+                
+                print("token ",token)
+                print("my_chat_id ",my_chat_id)
 
         self.URL="https://api.telegram.org/bot{}/".format(self.token)
 
